@@ -19,7 +19,6 @@ namespace creed_Chatbot
             // Play the voice greeting
             GreetingMessage();
 
-
             // Greet the user and ask for their name
             String userName = GreetUser();
 
@@ -56,7 +55,7 @@ namespace creed_Chatbot
             {
 
                 SoundPlayer player = new SoundPlayer("welcome.wav");
-                //player.PlaySync();
+                player.PlaySync();
 
             }
 
