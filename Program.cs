@@ -19,11 +19,13 @@ namespace creed_Chatbot
             // Play the voice greeting
             GreetingMessage();
 
+
             // Greet the user and ask for their name
-            GreetUser();
+            String userName = GreetUser();
 
             // Handle user input and provide responses
-            UserInput();
+            UserInput(userName);
+
 
         }
 
@@ -67,32 +69,20 @@ namespace creed_Chatbot
 
         }
 
-        static void GreetUser()
+        static string GreetUser()
         {
             Console.WriteLine("What's your name? ");
             var userName = Console.ReadLine();
             TypingDelay($"\nHello, {userName}! Welcome to the Creed CyberWorrias Bot, where we keep you protected and informed about the online world.");
+            return userName;
         }
 
-        static void UserInput()
+        static void UserInput(String userName)
         {
             while (true)
             {
-                Console.WriteLine("\nWhat would you like to know? Type your question from below:");
-                Console.WriteLine("\"How are you?\"");
-                Console.WriteLine("\"What is your purpose?\"");
-                Console.WriteLine("\"What can I ask you?\"");
-                Console.WriteLine("\"Password Safety\"");
-                Console.WriteLine("\"Phishing\"");
-                Console.WriteLine("\"Safe Browsing\"");
-                Console.WriteLine("\"Help\"");
-                Console.WriteLine("\"What is Two-Factor Authentication?\"");
-                Console.WriteLine("\"How can I protect against malware?\"");
-                Console.WriteLine("\"What is social engineering?\"");
-                Console.WriteLine("\"How can I protect my data privacy?\"");
-                Console.WriteLine("\"What are some general cybersecurity tips?\"");
-                Console.WriteLine("\n");
-                Console.WriteLine("Type 'exit' to quit.");
+
+                Console.WriteLine($"\nwhat can i help you with {userName} if you need Guideness enter Help to get a full view and the type of Questons to ask  ");
 
                 string input = Console.ReadLine().Trim().ToLower();
 
@@ -132,7 +122,19 @@ namespace creed_Chatbot
                         break;
 
                     case "help":
-                        TypingDelay("You can ask me questions related to cybersecurity, and I'll do my best to help!");
+                        TypingDelay("\nWhat would you like to know ? Type your question from below:");
+                        Console.WriteLine("\"How are you?\"");
+                        Console.WriteLine("\"What is your purpose?\"");
+                        Console.WriteLine("\"What can I ask you?\"");
+                        Console.WriteLine("\"Password Safety\"");
+                        Console.WriteLine("\"Phishing\"");
+                        Console.WriteLine("\"Safe Browsing\"");
+                        Console.WriteLine("\"Help\"");
+                        Console.WriteLine("\"What is Two-Factor Authentication?\"");
+                        Console.WriteLine("\"How can I protect against malware?\"");
+                        Console.WriteLine("\"What is social engineering?\"");
+                        Console.WriteLine("\"How can I protect my data privacy?\"");
+                        Console.WriteLine("\"What are some general cybersecurity tips?\"");
                         WaitForUserInput();
                         break;
 
