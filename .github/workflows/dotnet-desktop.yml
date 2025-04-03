@@ -24,10 +24,10 @@ jobs:
         uses: NuGet/setup-nuget@v1
 
       - name: Restore NuGet packages
-        run: nuget restore "creed_Chatbo.sln"
+        run: nuget restore "creed_Chatbot.sln"
 
       - name: Check Code Formatting
-        run: dotnet format --verify-no-changes "creed_Chatbo.sln" || exit 1
+        run: dotnet format --verify-no-changes "creed_Chatbot.sln" || exit 1
 
       - name: Build Project
         run: msbuild "creed_Chatbot.sln" /p:Configuration=Release
